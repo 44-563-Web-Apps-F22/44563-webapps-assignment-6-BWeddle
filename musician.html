@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Musician Thingy</title>
+    </head>
+    <body>
+        <h1>Musician guess by Benjamin Weddle</h1>
+        <h2>Getting input</h2>
+        <form>
+            <label for="sname">Enter the secret musician name</label>
+            <input type ="password" id="sname" name="sname" value="John Lennon"> <br>
+
+            <label for="guess">Guess the musician</label>
+            <input type ="text" id="guess" name="guess" autofocus> <br>
+
+            <input type="button" onclick="checkGuess()" value="Check the guess">
+        </form>
+
+        <p id="result"> </p>
+
+        <script>
+            let correct = 0;
+            let wrong = 0;
+            function checkGuess (){
+                console.log("Getting form values")
+                answer = document.getElementById("sname").value;
+                guess = document.getElementById("guess").value;
+                
+                out = document.getElementById("result");
+                if(guess == answer){
+                    alert("You got it right");
+                    correct += 1;
+                    out.innerHTML = "Correct: "+correct+"\nWrong: "+wrong
+
+                } else{
+                    alert("Wrong Musician");
+                    wrong += 1;
+                    out.innerHTML = "Correct: "+correct+"\nWrong: "+wrong
+                }
+            }
+        </script>
+
+    </body>
+</html> 
