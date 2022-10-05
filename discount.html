@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discount Domahickey</title>
+    </head>
+    <body>
+        <h1>Ben computes discounts</h1>
+        <h2>Getting input</h2>
+
+        <form>
+            <label for="amount">Enter base amount </label>
+            <input type ="number" id="amount" name="amount"value=20> <br>
+
+            <label for="disc">Enter the discount percentage </label>
+            <input type ="number" id="disc" name="disc"value=10> <br>
+
+            <input type="button" onclick="discount()" value="Apply Discount">
+        </form>
+
+        <p id="replace"> </p>
+
+        <script>
+            function discount (){
+                base = document.getElementById("amount").value
+                dis = document.getElementById("disc").value
+                var result = "";
+
+                for(let i = 0; i < 5; i++){
+                    result += String((base *(i+1)) * (1 - (dis / 100))) + " ";
+                }
+    
+                out = document.getElementById("replace")
+                out.innerHTML = "Discounted amounts for " + base + " are: " + result
+            }
+        </script>
+
+    </body>
+</html> 
