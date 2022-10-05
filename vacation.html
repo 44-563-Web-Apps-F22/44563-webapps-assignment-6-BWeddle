@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vacations</title>
+    </head>
+
+    <body>
+        <h1>Ben selects a vacation</h1>
+
+        <form>
+            <input type="checkbox" id="travel" name="vacay1"value="true">
+            <label for="travel">Travel by air</label></br>
+      
+            <input type="checkbox" id="domestic" name="vacay2" value="true">
+            <label for="domestic">Domestic</label></br>
+      
+            <input type="checkbox" id="resort" name="vacay3" value="false">
+            <label for="resort">Resort</label></br>
+            <input type="button" onclick="selectVacation()" value="Select a vacation">
+        </form>
+
+
+        <p id="result"> </p>
+
+        <script> 
+            var my_vacation = '';
+            function selectVacation (){
+                my_vacation = '';
+                trav = document.getElementById("travel").value
+                dom = document.getElementById("domestic").value
+                res = document.getElementById("resort").value
+
+                if (document.getElementById("travel").checked == true){
+                    my_vacation += "true ";
+                    trav = "true";
+                }
+                else{
+                    my_vacation += "false ";
+                    trav = "false";
+                }
+                if (document.getElementById("domestic").checked == true){
+                    my_vacation += "true ";
+                    dom = "true";
+                }
+                else{
+                    my_vacation += "false ";
+                    dom = "false";
+                }
+                if (document.getElementById("resort").checked == true){
+                    my_vacation += "true ";
+                    res = "true";
+                }
+                else{
+                    my_vacation += "false ";
+                    res = "false";
+                }
+
+                out = document.getElementById("result")
+                out.innerHTML = my_vacation
+            }
+        </script>
+
+    </body>
+</html> 

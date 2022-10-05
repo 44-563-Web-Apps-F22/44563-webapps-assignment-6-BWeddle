@@ -34,5 +34,42 @@
             }
         </script>
 
+        <form>
+            <input type="radio" onclick="chooseOp()" id="mult" name="func" value="times">
+            <label for="mult">*</label><br>
+            <input type="radio" onclick="chooseOp()" id="divi" name="func" value="divide">
+            <label for="divi">/</label><br>
+            <input type="radio" onclick="chooseOp()" id="exp" name="func" value="exponent">
+            <label for="exp">**</label>
+        </form>
+
+        <p id="replace2"> </p>
+
+        <script>
+            function chooseOp(){                
+                base = document.getElementById("amount").value
+                dis = document.getElementById("disc").value
+                var result = "";
+
+                multiply = document.getElementById("mult").checked
+                divide = document.getElementById("divi").checked
+                exponent = document.getElementById("exp").checked
+
+                if (multiply == true){
+                    result = String(base * dis);
+                }
+                else if (divide == true){
+                    result = String(base / dis);
+                }
+                else if (exponent == true){
+                    result = String(base ** dis);
+                }
+
+                out = document.getElementById("replace2");
+                out.innerHTML = "The text in Part 6: Step 4d is missing, here is the math: " + result
+
+            }
+        </script>
+
     </body>
 </html> 
