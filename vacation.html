@@ -19,8 +19,7 @@
             <input type="button" onclick="selectVacation()" value="Select a vacation">
         </form>
 
-
-        <p id="result"> </p>
+        <p id="result"></p>
 
         <script> 
             var my_vacation = '';
@@ -31,27 +30,27 @@
                 res = document.getElementById("resort").value
 
                 if (document.getElementById("travel").checked == true){
-                    my_vacation += "true ";
+                    my_vacation += "Taking a plane, ";
                     trav = "true";
                 }
                 else{
-                    my_vacation += "false ";
+                    my_vacation += "Not taking a plane, ";
                     trav = "false";
                 }
                 if (document.getElementById("domestic").checked == true){
-                    my_vacation += "true ";
+                    my_vacation += "travelling domestic, ";
                     dom = "true";
                 }
                 else{
-                    my_vacation += "false ";
+                    my_vacation += "travelling abroad, ";
                     dom = "false";
                 }
                 if (document.getElementById("resort").checked == true){
-                    my_vacation += "true ";
+                    my_vacation += "staying in a resort";
                     res = "true";
                 }
                 else{
-                    my_vacation += "false ";
+                    my_vacation += "not staying in a resort";
                     res = "false";
                 }
 
@@ -60,5 +59,28 @@
             }
         </script>
 
+        <form>
+            <label for="town">Enter a city: </label>
+            <input type ="text" id="town" name="vacay4"value='city'> <br>
+
+            <label for="cost">Enter price: </label>
+            <input type ="text" id="cost" name="vacay5"value='price'> <br>
+
+            <input type="button" onclick="updateVacation()" value="Update the vacation">
+        </form>
+
+        <p id="result2"> </p>
+
+        <script>
+            function updateVacation (){
+                city = document.getElementById("town").value;
+                price = document.getElementById("cost").value;
+
+                my_vacation += ", going to " + city + ", and it will cost $" + price;
+
+                out = document.getElementById("result2");
+                out.innerHTML = my_vacation;
+            }
+        </script>
     </body>
 </html> 
